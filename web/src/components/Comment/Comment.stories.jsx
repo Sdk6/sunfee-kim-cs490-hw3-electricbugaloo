@@ -11,7 +11,7 @@
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
 import Comment from './Comment'
-
+/*
 export const generated = () => {
   return (
     <Comment
@@ -19,6 +19,39 @@ export const generated = () => {
         name: 'Rob Cameron',
         body: 'This is the first comment!',
         createdAt: '2020-01-01T12:34:56Z',
+      }}
+    />
+  )
+}*/
+export const defaultView = () => {
+  return (
+    <Comment
+      comment={{
+        id: 1,
+        name: 'Rob Cameron',
+        body: 'This is the first comment!',
+        createdAt: '2020-01-01T12:34:56Z',
+        postId: 1,
+      }}
+    />
+  )
+}
+
+export const moderatorView = () => {
+  mockCurrentUser({
+    id: 1,
+    email: 'moderator@moderator.com',
+    roles: 'moderator',
+  })
+
+  return (
+    <Comment
+      comment={{
+        id: 1,
+        name: 'Rob Cameron',
+        body: 'This is the first comment!',
+        createdAt: '2020-01-01T12:34:56Z',
+        postId: 1,
       }}
     />
   )

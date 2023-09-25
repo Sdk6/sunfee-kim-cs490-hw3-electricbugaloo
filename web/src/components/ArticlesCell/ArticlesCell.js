@@ -1,5 +1,5 @@
 import Article from 'src/components/Article'
-
+/*
 export const QUERY = gql`
   query BlogPostsQuery {
     articles: posts {
@@ -7,6 +7,19 @@ export const QUERY = gql`
       title
       body
       createdAt
+    }
+  }
+`*/
+export const QUERY = gql`
+  query ArticlesQuery {
+    articles: posts {
+      id
+      title
+      body
+      createdAt
+      user {
+        name
+      }
     }
   }
 `
